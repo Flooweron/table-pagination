@@ -35,13 +35,13 @@ class App extends Component {
     this.setState({ data, sort, sortField })
   }
 
-  modeSelectHandler = url => {
+  modeSelectHandler = bigUrl => {
     // console.log(url)
     this.setState({
       isModeSelected: true,
       isLoading: true,
     })
-    this.fetchData(url)
+    this.fetchData(bigUrl)
   }
 
   
