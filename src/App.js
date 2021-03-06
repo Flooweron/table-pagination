@@ -18,8 +18,8 @@ class App extends Component {
     row: null,
     currentPage: 0,
   }
-  async fetchData(bigUrl) {
-    const response = await fetch(bigUrl)
+  async fetchData(url) {
+    const response = await fetch(url)
     const data = await response.json()
    
     this.setState({
@@ -35,13 +35,13 @@ class App extends Component {
     this.setState({ data, sort, sortField })
   }
 
-  modeSelectHandler = bigUrl => {
+  modeSelectHandler = url => {
     // console.log(url)
     this.setState({
       isModeSelected: true,
       isLoading: true,
     })
-    this.fetchData(bigUrl)
+    this.fetchData(url)
   }
 
   
