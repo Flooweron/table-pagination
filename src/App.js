@@ -45,6 +45,10 @@ class App extends Component {
   }
 
   
+  onRowSelect = row => (
+    this.setState({row})
+  )
+
   pageChangeHandler = ({selected}) => (
     this.setState({currentPage: selected})
   )
@@ -62,7 +66,8 @@ class App extends Component {
    var result = data.filter(item => {
      return (
        item["firstName"].toLowerCase().includes(search.toLowerCase()) ||
-       item["lastName"].toLowerCase().includes(search.toLowerCase()) 
+       item["lastName"].toLowerCase().includes(search.toLowerCase()) ||
+       item["email"].toLowerCase().includes(search.toLowerCase())
      );
    });
    if(!result.length){
@@ -125,10 +130,10 @@ class App extends Component {
         forcePage={this.state.currentPage}
       /> : null
       }
+
       </div>
     );
   }
 }
 
 export default App;
-
